@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: New date log entry
+# key: captains-log-entry
+# --
+* `(log-date)`
+** Tasks
+   $0
+** Notes

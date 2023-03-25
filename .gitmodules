@@ -1,0 +1,3 @@
+[submodule ".tooling/z"]
+	path = .tooling/z
+	url = https://github.com/rupa/z.git
