@@ -1,0 +1,21 @@
+{
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "security.workspace.trust.untrustedFiles": "open",
+    "explorer.confirmDragAndDrop": false,
+    "editor.fontSize": 14,
+    "explorer.confirmDelete": false,
+    "editor.inlineSuggest.enabled": true,
+    "workbench.startupEditor": "none",
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": true,
+        "plaintext": false,
+        "markdown": false
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.fontFamily": "Input Code Mono",
+    "editor.tabSize": 2,
+    "redhat.telemetry.enabled": false
+}
