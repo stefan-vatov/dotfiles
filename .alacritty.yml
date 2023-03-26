@@ -70,17 +70,17 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: FuraMono Nerd Font Mono
+    family: FiraCode Nerd Font Mono
     style: Regular
 
   # The bold font face
   medium:
-    family: FuraMono Nerd Font Mono
+    family: FiraCode Nerd Font Mono
     style: Medium
     
   # The bold font face
   bold:
-    family: FuraMono Nerd Font Mono
+    family: FiraCode Nerd Font Mono
     style: bold
 
   # Point size of the font
