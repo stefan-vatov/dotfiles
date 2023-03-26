@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorTheme": "GitHub Dark Default",
     "security.workspace.trust.untrustedFiles": "open",
     "explorer.confirmDragAndDrop": false,
     "editor.fontSize": 14,
@@ -17,5 +17,6 @@
     },
     "editor.fontFamily": "Input Code Mono",
     "editor.tabSize": 2,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "workbench.iconTheme": "vscode-icons"
 }
