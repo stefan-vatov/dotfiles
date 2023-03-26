@@ -1,5 +1,3 @@
-ssh-add ~/.ssh/id_rsa
-
 # PATH
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
@@ -116,5 +114,10 @@ function emacs {
     done
     /usr/local/opt/util-linux/bin/setsid emacsclient -n -a /usr/local/bin/emacs ${args[*]}
 }
+
+export GPG_TTY=$(tty)
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(starship init zsh)"
+eval "$(ssh-agent -s)"
 
 eval "$(starship init zsh)"
