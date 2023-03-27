@@ -23,42 +23,6 @@ then
     compinit
 fi
 
-if [ -d "${HOME}/.zgen/" ]
-then
-    # load zgen
-    source "${HOME}/.zgen/zgen.zsh"
-
-    autoload -U promptinit; promptinit
-    prompt pure
-
-    # if the init scipt doesn't exist
-    if ! zgen saved; then
-        echo "Creating a zgen save"
-
-        zgen oh-my-zsh
-
-        # plugins
-        zgen load zdharma/fast-syntax-highlighting
-        zgen load zsh-users/zsh-history-substring-search
-        zgen load zsh-users/zsh-completions src
-        zgen load zpm-zsh/ssh
-        zgen load zsh-users/zsh-completions
-        zgen load felixr/docker-zsh-completion
-        zgen load subnixr/minimal
-        zgen load zsh-users/zsh-autosuggestions
-        zgen load Tarrasch/zsh-command-not-found
-        zgen load b4b4r07/emoji-cli
-        zgen load andrewferrier/fzf-z
-        zgen load wfxr/forgit
-        zgen load peterhurford/git-it-on.zsh
-        # zgen load zdharma/history-search-multi-word
-        zgen load agkozak/zsh-z
-
-        zgen save
-    fi
-
-fi
-
 # load nvm
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -t __init_nvm)" = function ]; then
   export NVM_DIR="$HOME/.nvm"
@@ -81,7 +45,7 @@ test -r $d && eval "$(gdircolors $d)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND -t d"
 
 # Move next only if `homebrew` is installed
 if command -v brew >/dev/null 2>&1; then

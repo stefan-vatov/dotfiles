@@ -1,8 +1,0 @@
-# -*- mode: snippet -*-
-# name: Captain's Log Entry for Tomorrow
-# key:captains-log-entry-tomorrow
-# --
-* `(log-date-tomorrow)`
-** Tasks
-   $0
-** Notes

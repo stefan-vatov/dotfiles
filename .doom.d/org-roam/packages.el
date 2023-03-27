@@ -6,7 +6,6 @@
     :hook
     (after-init . org-roam-mode)
     :custom
-    (org-roam-directory "~/Dropbox/org-roam")
     :init
     (progn
       (spacemacs/declare-prefix "ar" "org-roam")

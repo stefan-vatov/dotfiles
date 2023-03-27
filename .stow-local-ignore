@@ -6,6 +6,7 @@
 \.editorconfig$
 \.shellcheckrc$
 \.pre-commit-config\.yaml$
+\.README.md$
 
 # Ignore any file or directory ending with a tilde (backup files)
 .*~$
