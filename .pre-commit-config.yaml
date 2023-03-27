@@ -28,4 +28,5 @@ repos:
     rev: v0.9.0.2
     hooks:
       - id: shellcheck
+        args: ['-x']
         files: \.(sh|bash|zsh|ksh)$

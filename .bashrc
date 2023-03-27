@@ -40,7 +40,14 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -t __init_nvm)" = function ]; then
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
 
-[ -f ~/.config/.fzf.bash ] && source ~/.config/.fzf.bash
+# FZF
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
+
+# Move next only if `homebrew` is installed
 
 shopt -s expand_aliases
 

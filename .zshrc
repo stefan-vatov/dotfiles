@@ -76,7 +76,12 @@ fi
 d=.dircolors
 test -r $d && eval "$(gdircolors $d)"
 
-[ -f ~/.config/.fzf.zsh ] && source ~/.config/.fzf.zsh
+# FZF
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND --type d"
 
 # Move next only if `homebrew` is installed
 if command -v brew >/dev/null 2>&1; then
@@ -84,7 +89,6 @@ if command -v brew >/dev/null 2>&1; then
 	[ -f $(brew --prefix)/etc/profile.d/z.sh ] && source $(brew --prefix)/etc/profile.d/z.sh
 fi
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # aliases
 

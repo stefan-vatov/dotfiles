@@ -1,0 +1,14 @@
+# Ignore .git, .DS_Store, and .stow-local-ignore files
+\.git$
+\.DS_Store$
+\.stow-local-ignore$
+\.gitingore$
+\.editorconfig$
+\.shellcheckrc$
+\.pre-commit-config\.yaml$
+
+# Ignore any file or directory ending with a tilde (backup files)
+.*~$
+
+# Ignore any file or directory ending with .bak or .swp (backup files)
+\.(bak|swp)$

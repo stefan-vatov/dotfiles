@@ -2,7 +2,7 @@
     "workbench.colorTheme": "GitHub Dark Default",
     "security.workspace.trust.untrustedFiles": "open",
     "explorer.confirmDragAndDrop": false,
-    "editor.fontSize": 14,
+    "editor.fontSize": 13,
     "explorer.confirmDelete": false,
     "editor.inlineSuggest.enabled": true,
     "workbench.startupEditor": "none",
@@ -16,6 +16,8 @@
         "editor.formatOnType": true
     },
     "editor.fontFamily": "Input Code Mono",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "terminal.integrated.fontSize": 13,
     "editor.tabSize": 2,
     "redhat.telemetry.enabled": false,
     "workbench.iconTheme": "vscode-icons"
