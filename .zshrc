@@ -56,6 +56,8 @@ fi
 
 # aliases
 
+source ~/.aliases
+
 alias cat=bat
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
