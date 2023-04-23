@@ -25,4 +25,7 @@
         "elixir": "html",
         "phoenix-heex": "html"
     },
+    "workbench.iconTheme": "vscode-icons",
+    "githubPullRequests.pushBranch": "always",
+    "window.zoomLevel": 1
 }
