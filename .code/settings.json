@@ -20,5 +20,9 @@
     "terminal.integrated.fontSize": 13,
     "editor.tabSize": 2,
     "redhat.telemetry.enabled": false,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "tailwindCSS.includeLanguages": {
+        "elixir": "html",
+        "phoenix-heex": "html"
+    },
 }
