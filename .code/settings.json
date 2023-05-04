@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.colorTheme": "SynthWave '84",
     "security.workspace.trust.untrustedFiles": "open",
     "explorer.confirmDragAndDrop": false,
     "editor.fontSize": 13,
@@ -7,10 +7,11 @@
     "editor.inlineSuggest.enabled": true,
     "workbench.startupEditor": "none",
     "github.copilot.enable": {
-        "*": true,
-        "yaml": true,
+        "*": false,
         "plaintext": false,
-        "markdown": false
+        "markdown": false,
+        "scminput": false,
+        "yaml": false
     },
     "[python]": {
         "editor.formatOnType": true
@@ -20,11 +21,12 @@
     "terminal.integrated.fontSize": 13,
     "editor.tabSize": 2,
     "redhat.telemetry.enabled": false,
-    "workbench.iconTheme": "vscode-icons",
     "tailwindCSS.includeLanguages": {
-        "elixir": "html",
-        "phoenix-heex": "html"
+      "elixir": "html",
+      "phoenix-heex": "html"
     },
+    "workbench.iconTheme": "vscode-icons",
     "githubPullRequests.pushBranch": "always",
+    "svelte.enable-ts-plugin": true,
     "window.zoomLevel": 1
 }
