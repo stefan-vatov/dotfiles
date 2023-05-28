@@ -1,32 +1,32 @@
 {
-    "workbench.colorTheme": "SynthWave '84",
-    "security.workspace.trust.untrustedFiles": "open",
-    "explorer.confirmDragAndDrop": false,
-    "editor.fontSize": 13,
-    "explorer.confirmDelete": false,
-    "editor.inlineSuggest.enabled": true,
-    "workbench.startupEditor": "none",
-    "github.copilot.enable": {
-        "*": false,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false,
-        "yaml": false
-    },
-    "[python]": {
-        "editor.formatOnType": true
-    },
-    "editor.fontFamily": "Input Code Mono",
-    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-    "terminal.integrated.fontSize": 13,
-    "editor.tabSize": 2,
-    "redhat.telemetry.enabled": false,
-    "tailwindCSS.includeLanguages": {
-      "elixir": "html",
-      "phoenix-heex": "html"
-    },
-    "workbench.iconTheme": "vscode-icons",
-    "githubPullRequests.pushBranch": "always",
-    "svelte.enable-ts-plugin": true,
-    "window.zoomLevel": 1
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "editor.fontFamily": "Input Code Mono",
+  "editor.fontSize": 13,
+  "editor.inlineSuggest.enabled": true,
+  "editor.tabSize": 2,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "github.copilot.enable": {
+    "*": false,
+    "markdown": false,
+    "plaintext": false,
+    "scminput": false,
+    "yaml": false
+  },
+  "githubPullRequests.pushBranch": "always",
+  "redhat.telemetry.enabled": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "svelte.enable-ts-plugin": true,
+  "tailwindCSS.includeLanguages": {
+    "elixir": "html",
+    "phoenix-heex": "html"
+  },
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontSize": 13,
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "SynthWave '84",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "none"
 }
