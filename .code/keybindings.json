@@ -1,6 +1,6 @@
 [
   {
-    "key": "ctrl+cmd+c",
-    "command": "workbench.action.addComment"
+    "command": "workbench.action.addComment",
+    "key": "ctrl+cmd+c"
   }
 ]
