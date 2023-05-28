@@ -1,25 +1,14 @@
-name: Pre-commit Check
+name: hooks
 
 on:
+  push:
+    branches:
+      - main
+      - staging
+      - trying
   pull_request:
 
+
 jobs:
-  pre-commit:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v3
-        with:
-          python-version: 3.x
-
-      - name: Install pre-commit
-        run: pip install pre-commit
-
-      - name: Install pre-commit hooks
-        run: pre-commit install-hooks
-
-      - name: Run pre-commit hooks
-        run: pre-commit run --all-files
+  lint_test:
+    uses: stefan-vatov/gh-workflows/.github/workflows/pre-commit-hooks.yml@main
