@@ -1,0 +1,14 @@
+name: hooks
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - trying
+  pull_request:
+
+
+jobs:
+  lint_test:
+    uses: stefan-vatov/gh-workflows/.github/workflows/pre-commit-hooks.yml@main
