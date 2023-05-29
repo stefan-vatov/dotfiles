@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "SynthWave '84",
+    "workbench.colorTheme": "Obsidian Dark Theme (Rust syntax optimized)",
     "security.workspace.trust.untrustedFiles": "open",
     "explorer.confirmDragAndDrop": false,
     "editor.fontSize": 13,
@@ -28,5 +28,5 @@
     "workbench.iconTheme": "vscode-icons",
     "githubPullRequests.pushBranch": "always",
     "svelte.enable-ts-plugin": true,
-    "window.zoomLevel": 1
+    "debug.allowBreakpointsEverywhere": true
 }
