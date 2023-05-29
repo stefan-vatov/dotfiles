@@ -2,6 +2,7 @@
   "[python]": {
     "editor.formatOnType": true
   },
+  "debug.allowBreakpointsEverywhere": true,
   "editor.fontFamily": "Input Code Mono",
   "editor.fontSize": 13,
   "editor.inlineSuggest.enabled": true,
@@ -25,8 +26,7 @@
   },
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
-  "window.zoomLevel": 1,
-  "workbench.colorTheme": "SynthWave '84",
+  "workbench.colorTheme": "Obsidian Dark Theme (Rust syntax optimized)",
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none"
 }
