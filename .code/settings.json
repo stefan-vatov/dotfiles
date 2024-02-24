@@ -1,4 +1,7 @@
 {
+  "[nginx]": {
+    "editor.defaultFormatter": "teclado.vscode-nginx-format"
+  },
   "[python]": {
     "editor.formatOnType": true
   },
