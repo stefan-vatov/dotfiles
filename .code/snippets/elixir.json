@@ -1,0 +1,16 @@
+{
+  "HEEX non-printable expression": {
+    "body": [
+      "<% $1 %>"
+    ],
+    "description": "Create a heex printable expression",
+    "prefix": "he"
+  },
+  "HEEX printable expression": {
+    "body": [
+      "<%= $1 %>"
+    ],
+    "description": "Create a heex printable expression",
+    "prefix": "he="
+  }
+}
