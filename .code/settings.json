@@ -5,7 +5,17 @@
   "[python]": {
     "editor.formatOnType": true
   },
+  "cSpell.userWords": [
+    "headlessui",
+    "heroicons",
+    "mysession",
+    "tailwindcss"
+  ],
   "debug.allowBreakpointsEverywhere": true,
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "block",
+  "editor.cursorSurroundingLines": 15,
   "editor.fontFamily": "Input Code Mono",
   "editor.fontSize": 13,
   "editor.inlineSuggest.enabled": true,
@@ -29,6 +39,7 @@
   },
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Obsidian Dark Theme (Rust syntax optimized)",
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none"
