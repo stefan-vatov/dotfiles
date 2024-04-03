@@ -7,6 +7,8 @@
 	co = checkout
 	df = diff --color --color-words --abbrev
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+	dft = difftool
+	dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -29,17 +31,20 @@
 	trustexitcode = true
 [merge]
 	tool = Kaleidoscope
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
 	prompt = false
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE" --color always
 [mergetool]
 	prompt = false
 	keepBackup = true
 [diff]
-	tool = Kaleidoscope
+	tool = difftastic
+	external = difft
 [interactive]
 	diffFilter = delta --color-only --features=interactive
+[pager]
+	difftool = true
 
 # so much color
 [color]
@@ -87,6 +92,8 @@
 	helper = osxkeychain
 [commit]
 	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
 
 [delta]
     features = decorations
