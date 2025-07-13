@@ -62,7 +62,7 @@ alias cat=bat
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export ASDF_DIR=$(brew --prefix asdf)
-export PATH="/Users/angeal/Library/Python/3.7/bin:$PATH"
+export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 TERM="xterm"
 export TERM
