@@ -1,4 +1,4 @@
-ssh-add ~/.ssh/id_rsa
+[ -f ~/.ssh/id_rsa ] && ssh-add ~/.ssh/id_rsa
 
 # PATH
 export PATH="$PATH:$HOME/.rvm/bin"
