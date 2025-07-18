@@ -1,27 +1,77 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[nginx]": {
     "editor.defaultFormatter": "teclado.vscode-nginx-format"
   },
   "[python]": {
     "editor.formatOnType": true
   },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": false
+  },
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "addWords": true,
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/custom-dictionary-user.txt",
+      "scope": "user"
+    }
+  },
   "cSpell.userWords": [
+    "deepseek",
     "headlessui",
     "heroicons",
+    "loglevel",
     "mysession",
+    "scminput",
     "tailwindcss"
   ],
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "debug.allowBreakpointsEverywhere": true,
+  "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.cursorStyle": "block",
   "editor.cursorSurroundingLines": 15,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Input Code Mono",
   "editor.fontSize": 13,
+  "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.patterns": {
+    "*.db": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.s3db": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.ts": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "Cargo.toml": "Cargo.lock",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "tsconfig.json": "tsconfig.*.json"
+  },
+  "files.autoGuessEncoding": true,
   "github.copilot.enable": {
     "*": false,
     "markdown": false,
@@ -39,8 +89,9 @@
   },
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
+  "traycer.enableAutoAnalysis": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Obsidian Dark Theme (Rust syntax optimized)",
+  "workbench.colorTheme": "Draco-dark",
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none"
 }

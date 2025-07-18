@@ -144,15 +144,17 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/angeal/.pyenv/versions/anaconda3-2022.05/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/.pyenv/versions/anaconda3-2022.05/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/angeal/.pyenv/versions/anaconda3-2022.05/etc/profile.d/conda.sh" ]; then
-        . "/Users/angeal/.pyenv/versions/anaconda3-2022.05/etc/profile.d/conda.sh"
+    if [ -f "$HOME/.pyenv/versions/anaconda3-2022.05/etc/profile.d/conda.sh" ]; then
+        . "$HOME/.pyenv/versions/anaconda3-2022.05/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/angeal/.pyenv/versions/anaconda3-2022.05/bin:$PATH"
+        export PATH="$HOME/.pyenv/versions/anaconda3-2022.05/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"

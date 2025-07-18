@@ -2,3 +2,7 @@ alias python="python3.10"
 alias pip="pip3.10"
 alias topgrade="topgrade --disable containers emacs yarn system remotes vim node"
 alias code="code-insiders"
+alias docker=podman
+alias ghpr="gh pr create --fill --web"
+alias gcm="git checkout main"
+alias gcmp="git checkout main && git pull"
