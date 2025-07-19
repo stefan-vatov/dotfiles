@@ -11,6 +11,10 @@ CLAUDE_SETTINGS_FILE="settings.json"
 
 safe_remove "$CLAUDE_TARGET_DIR/$CLAUDE_SETTINGS_FILE"
 
+# Remove commands and hooks directory symlinks
+safe_remove "$CLAUDE_TARGET_DIR/commands"
+safe_remove "$CLAUDE_TARGET_DIR/hooks"
+
 # ---------------------------------- CURSOR ---------------------------------- #
 
 log_section "CURSOR"

@@ -14,6 +14,13 @@ safe_mkdir "$CLAUDE_TARGET_DIR"
 safe_remove "$CLAUDE_TARGET_DIR/$CLAUDE_SETTINGS_FILE"
 safe_link "$(pwd)/$CLAUDE_DOTFILES_DIR/$CLAUDE_SETTINGS_FILE" "$CLAUDE_TARGET_DIR/$CLAUDE_SETTINGS_FILE"
 
+# Link commands and hooks directories
+safe_remove "$CLAUDE_TARGET_DIR/commands"
+safe_link "$(pwd)/$CLAUDE_DOTFILES_DIR/commands" "$CLAUDE_TARGET_DIR/commands"
+
+safe_remove "$CLAUDE_TARGET_DIR/hooks"
+safe_link "$(pwd)/$CLAUDE_DOTFILES_DIR/hooks" "$CLAUDE_TARGET_DIR/hooks"
+
 # ---------------------------------- CURSOR ---------------------------------- #
 
 log_section "CURSOR"

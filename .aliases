@@ -6,3 +6,5 @@ alias docker=podman
 alias ghpr="gh pr create --fill --web"
 alias gcm="git checkout main"
 alias gcmp="git checkout main && git pull"
+alias ccusage="bunx ccusage"
+alias claude="~/.claude/local/claude"

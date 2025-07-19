@@ -1,5 +1,9 @@
 {
   "mcpServers": {
+    "RepoPrompt": {
+      "args": [],
+      "command": "${HOME}/RepoPrompt/repoprompt_cli"
+    },
     "analogical-reasoning": {
       "args": [
         "-y",

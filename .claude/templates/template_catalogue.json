@@ -1,0 +1,93 @@
+{
+  "defaultTemplate": "pseudo-xml",
+  "lastUpdated": "2025-01-19",
+  "templates": [
+    {
+      "description": "Standard template for Claude Code commands using pseudo-XML structure within Markdown",
+      "file": "pseudo-xml.md",
+      "formatting": {
+        "codeBlocks": "Triple backticks for examples",
+        "comments": "HTML-style comments for section headers",
+        "indentation": "2 spaces for XML content",
+        "structure": "Markdown file with embedded pseudo-XML tags"
+      },
+      "id": "pseudo-xml",
+      "name": "Pseudo-XML Command Template",
+      "placeholders": {
+        "ADDITIONAL_SECTIONS": {
+          "description": "Optional sections like flags, patterns, sub-agents, etc.",
+          "examples": [
+            "<flags>",
+            "<sub-agents>",
+            "<question-templates>",
+            "<coverage-tracking>",
+            "<hypothesis-patterns>",
+            "<language-strategies>"
+          ],
+          "optional": true
+        },
+        "COMMAND_CONTEXT": {
+          "description": "Brief overview of the command's purpose and capabilities",
+          "example": "General-purpose debugging command that applies first-principles debugging methodology..."
+        },
+        "COMMAND_EXAMPLES": {
+          "description": "Usage examples showing different invocation patterns",
+          "example": "# Basic usage\\n/command \"input\"\\n\\n# With flags\\n/command --fast \"input\"",
+          "format": "Bash commands with comments"
+        },
+        "COMMAND_EXECUTION": {
+          "description": "Step-by-step workflow with numbered stages and sub-steps",
+          "example": "1. <init>\\n     - Parse input\\n     - Load context\\n2. <process>\\n     - Execute logic",
+          "format": "Numbered list with <stage-name> tags"
+        },
+        "COMMAND_NAME": {
+          "description": "The display name of the command",
+          "example": "Debug"
+        },
+        "COMMAND_REQUIREMENTS": {
+          "description": "Detailed operational requirements, inputs, outputs, and constraints",
+          "example": "- Accept flexible input via $ARGUMENTS\\n- Auto-detect project context\\n- Core principles...",
+          "format": "Bullet list with sub-items"
+        },
+        "COMMAND_VALIDATION": {
+          "description": "Quality gates and verification checklist",
+          "example": "- [ ] Input validated\\n- [ ] All steps completed\\n- [ ] Output generated",
+          "format": "Checkbox list"
+        }
+      },
+      "sections": {
+        "optional": [
+          "flags",
+          "sub-agents",
+          "question-templates",
+          "coverage-tracking",
+          "coverage-algorithm",
+          "hypothesis-patterns",
+          "language-strategies",
+          "follow-up-patterns",
+          "edge-case-exploration",
+          "depth-probing",
+          "output-format"
+        ],
+        "required": [
+          "context",
+          "requirements",
+          "execution",
+          "validation",
+          "examples"
+        ]
+      },
+      "usage": {
+        "primary": "Used by /claude:gen-command to create new commands",
+        "workflow": [
+          "Load template",
+          "Replace placeholders with generated content",
+          "Add optional sections as needed",
+          "Write to .claude/commands/{category}/{number}_{name}.md"
+        ]
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "version": "1.0.0"
+}
