@@ -10,6 +10,7 @@
 \.README.md$
 \.justfile$
 \.scripts$
+\.vscode$
 
 # Ignore any file or directory ending with a tilde (backup files)
 

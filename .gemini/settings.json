@@ -6,73 +6,63 @@
     },
     "analogical-reasoning": {
       "args": [
-        "-y",
         "@waldzellai/analogical-reasoning"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "collaborative-reasoning": {
       "args": [
-        "-y",
         "@waldzellai/collaborative-reasoning"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "context7": {
       "args": [
-        "-y",
         "@upstash/context7-mcp"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "decision-framework": {
       "args": [
-        "-y",
         "@waldzellai/decision-framework"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "memory": {
       "args": [
-        "-y",
         "@modelcontextprotocol/server-memory"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "metacognitive-monitoring": {
       "args": [
-        "-y",
         "@waldzellai/metacognitive-monitoring"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "perplexity-ask": {
       "args": [
-        "-y",
         "server-perplexity-ask"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "scientific-method": {
       "args": [
-        "-y",
         "@waldzellai/scientific-method"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "sequential-thinking": {
       "args": [
-        "-y",
         "@modelcontextprotocol/server-sequential-thinking"
       ],
-      "command": "npx"
+      "command": "bunx"
     },
     "structured-argumentation": {
       "args": [
-        "-y",
         "@waldzellai/structured-argumentation"
       ],
-      "command": "npx"
+      "command": "bunx"
     }
   },
   "selectedAuthType": "gemini-api-key",

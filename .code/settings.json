@@ -44,6 +44,7 @@
   ],
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "debug.allowBreakpointsEverywhere": true,
+  "deno.enable": true,
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",

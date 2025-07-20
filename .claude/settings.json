@@ -1,3 +1,45 @@
 {
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [],
+        "matcher": ""
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [],
+        "matcher": ""
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "command": "${HOME}/.deno/bin/deno run --allow-read --allow-write=./logs --allow-env ${HOME}/.claude/hooks/pre_tool_use.ts",
+            "type": "command"
+          }
+        ],
+        "matcher": ""
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [],
+        "matcher": ""
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [],
+        "matcher": ""
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": []
+      }
+    ]
+  },
   "model": "opus"
 }

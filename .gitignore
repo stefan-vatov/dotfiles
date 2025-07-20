@@ -29,3 +29,5 @@ fishd.*
 .config/fish/fish_history
 fish/fish_history
 **/*.local.*
+.logs
+logs
