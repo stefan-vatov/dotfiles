@@ -29,6 +29,7 @@
     2. <confirm>
          - Display: "✓ TypeScript context loaded"
     </confirm>
+
   </execution>
 
   <!-- ---------- 4. VALIDATION CHECKLIST ---------- -->
@@ -48,6 +49,7 @@
     # Claude self-invokes when detecting TypeScript work
     # (automatic - no user action needed)
     ```
+
   </examples>
 
   <!-- ---------- 6. TYPESCRIPT CONTEXT RULES ---------- -->
@@ -309,48 +311,6 @@
           ```
       </function_types>
 
-      <class_types>
-        - **Access Modifiers:** Use private, protected, public
-          ```typescript
-          class User {
-            private id: string
-            protected email: string
-            public name: string
-          }
-          ```
-        - **Abstract Classes:** Define contracts with implementation
-          ```typescript
-          abstract class Animal {
-            abstract makeSound(): string
-            move(): void { /* implementation */ }
-          }
-          ```
-        - **Implements Clause:** Enforce interface contracts
-          ```typescript
-          class Car implements Vehicle { /* implementation */ }
-          ```
-        - **Static Members:** Type class-level members
-          ```typescript
-          class MathUtils {
-            static PI: number = 3.14159
-            static round(n: number): number { return Math.round(n) }
-          }
-          ```
-        - **Parameter Properties:** Shorthand for constructor
-          ```typescript
-          class Point {
-            constructor(public x: number, public y: number) {}
-          }
-          ```
-        - **Decorators:** Type decorator functions
-          ```typescript
-          function sealed(constructor: Function) {
-            Object.seal(constructor)
-            Object.seal(constructor.prototype)
-          }
-          ```
-      </class_types>
-
       <best_practices>
         - **Prefer Unknown:** Use `unknown` instead of `any` for type safety
         - **Avoid Type Assertions:** Let TypeScript infer or use type guards
@@ -400,5 +360,6 @@
           ```
       </common_patterns>
     </high-priority>
+
   </typescript-rules>
 </instructions>
