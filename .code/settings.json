@@ -1,20 +1,53 @@
 {
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
   "[nginx]": {
     "editor.defaultFormatter": "teclado.vscode-nginx-format"
   },
   "[python]": {
     "editor.formatOnType": true
   },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "cSpell.ignoreWords": [
+    "personalisation"
+  ],
   "cSpell.userWords": [
+    "BYNDER",
+    "Commiter",
+    "curently",
+    "endraw",
+    "Goldstriker",
     "headlessui",
     "heroicons",
+    "igaming",
+    "JACKPOTJOY",
+    "Kishan",
+    "mafs",
+    "Minigames",
     "mysession",
+    "openapi",
+    "openseach",
+    "OPENSEARCH",
+    "personalised",
+    "rizz",
+    "sitename",
+    "sitenames",
     "tailwindcss"
   ],
+  "continue.telemetryEnabled": false,
   "debug.allowBreakpointsEverywhere": true,
+  "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
-  "editor.cursorStyle": "block",
   "editor.cursorSurroundingLines": 15,
   "editor.fontFamily": "Input Code Mono",
   "editor.fontSize": 13,
@@ -22,14 +55,16 @@
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": false,
     "markdown": false,
     "plaintext": false,
     "scminput": false,
-    "yaml": false
+    "yaml": true
   },
   "githubPullRequests.pushBranch": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "open",
   "svelte.enable-ts-plugin": true,
@@ -37,6 +72,19 @@
     "elixir": "html",
     "phoenix-heex": "html"
   },
+  "terminal.integrated.automationProfile.linux": {
+    "args": [
+      "--login"
+    ],
+    "path": "/bin/zsh"
+  },
+  "terminal.integrated.automationProfile.osx": {
+    "args": [
+      "--login"
+    ],
+    "path": "/bin/zsh"
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
   "typescript.updateImportsOnFileMove.enabled": "always",

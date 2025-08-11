@@ -1,4 +1,6 @@
-alias python="python3.10"
+alias python="python3.12"
 alias pip="pip3.10"
 alias topgrade="topgrade --disable containers emacs yarn system remotes vim node"
 alias code="code-insiders"
+alias docker="podman"
+alias gmr="glab mr create -f -y"

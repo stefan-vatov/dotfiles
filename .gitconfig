@@ -21,16 +21,13 @@
 	pager = delta
 	editor = /usr/bin/vim
 
-[difftool "sourcetree"]
-	cmd = /Applications/Kaleidoscope.app/Contents/MacOS/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+[merge]
+tool = araxis
+[mergetool "araxis"]
+		path = /Applications/Araxis Merge.app/Contents/Utilities/compare
 [mergetool "sourcetree"]
 	cmd = " "
 	trustExitCode = true
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-	trustexitcode = true
-[merge]
-	tool = Kaleidoscope
 [difftool]
 	prompt = false
 [difftool "difftastic"]
