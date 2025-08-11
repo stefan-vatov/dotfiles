@@ -1,0 +1,34 @@
+theme = flexoki-dark
+
+# Font Configuration
+
+font-family = Berkeley Mono
+font-style = Regular
+font-size = 15
+font-thicken = true
+font-thicken-strength = 100
+
+# Visual Polish
+
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+window-padding-x = 15
+window-padding-y = 10
+
+# Cursor
+
+cursor-style = block
+cursor-style-blink = false
+
+# Window
+
+window-colorspace = display-p3
+macos-titlebar-style = tabs
+confirm-close-surface = false
+unfocused-split-opacity = 1.0
+
+# Performance optimisations
+
+confirm-close-surface = false
+clipboard-paste-protection = false
+shell-integration-features = no-cursor

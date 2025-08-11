@@ -6,9 +6,6 @@
 # git credential file
 .gitconfig.local
 
-.config/
-
-
 # Folder view configuration files
 .DS_Store
 Desktop.ini
