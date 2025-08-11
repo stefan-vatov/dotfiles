@@ -1,0 +1,365 @@
+# TypeScript Context Primer Command
+
+<instructions>
+  <!-- ---------- 1. STATIC CONTEXT / SYSTEM PROMPT ---------- -->
+  <context>
+    Injects comprehensive TypeScript type system rules and advanced patterns into the current context.
+    This command provides Claude with essential TypeScript best practices focusing on the type system,
+    advanced type patterns, and declaration files for writing type-safe, maintainable code.
+  </context>
+
+  <!-- ---------- 2. OPERATIONAL REQUIREMENTS ---------- -->
+  <requirements>
+    - Accept no arguments or flags
+    - Inject TypeScript type system rules as high-priority context
+    - Display simple confirmation: "✓ TypeScript context loaded"
+    - Rules focus on type system, advanced patterns, and declarations (no config)
+    - Claude should self-invoke when working with .ts files, .d.ts files, or detecting complex TypeScript patterns
+    - Works independently as context priming
+    - Uses XML-style organization like frontend rules
+  </requirements>
+
+  <!-- ---------- 3. EXECUTION FLOW ---------- -->
+  <execution>
+    1. <inject-context>
+         - Add high-priority TypeScript rules to current context
+         - Mark as "IMPORTANT: TypeScript Type System Rules"
+    </inject-context>
+
+    2. <confirm>
+         - Display: "✓ TypeScript context loaded"
+    </confirm>
+
+  </execution>
+
+  <!-- ---------- 4. VALIDATION CHECKLIST ---------- -->
+  <validation>
+    - [ ] Context injection completed
+    - [ ] Confirmation message displayed
+    - [ ] Rules are marked as high-priority
+    - [ ] No errors or warnings shown
+  </validation>
+
+  <!-- ---------- 5. EXAMPLE INVOCATIONS ---------- -->
+  <examples>
+    ```bash
+    # Load TypeScript context
+    /code:ctx:ts
+
+    # Claude self-invokes when detecting TypeScript work
+    # (automatic - no user action needed)
+    ```
+
+  </examples>
+
+  <!-- ---------- 6. TYPESCRIPT CONTEXT RULES ---------- -->
+  <typescript-rules>
+    <high-priority>
+      IMPORTANT: TypeScript Type System Rules
+
+      <type_system_fundamentals>
+        - **Never Use Any:** Replace `any` with `unknown` and implement proper type guards
+        - **Strict Null Checks:** Always handle `null` and `undefined` explicitly in types
+        - **Type Inference:** Let TypeScript infer types when obvious, be explicit when not
+        - **Union Types:** Use discriminated unions to model mutually exclusive states
+        - **Intersection Types:** Combine types with `&` for composition over inheritance
+        - **Type Aliases vs Interfaces:** Use `interface` for object shapes, `type` for unions/intersections
+        - **Const Assertions:** Use `as const` for literal types and immutable structures
+        - **Type Predicates:** Implement custom type guards with `is` keyword
+        - **Never Type:** Use `never` for exhaustive checks and impossible states
+        - **Unknown vs Any:** Always prefer `unknown` over `any` for type-unsafe values
+      </type_system_fundamentals>
+
+      <advanced_type_patterns>
+        - **Mapped Types:** Transform existing types programmatically
+          ```typescript
+          type Readonly<T> = { readonly [P in keyof T]: T[P] }
+          type Partial<T> = { [P in keyof T]?: T[P] }
+          type Required<T> = { [P in keyof T]-?: T[P] }
+          ```
+        - **Conditional Types:** Implement type-level conditionals
+          ```typescript
+          type IsArray<T> = T extends any[] ? true : false
+          type Flatten<T> = T extends Array<infer U> ? U : T
+          ```
+        - **Template Literal Types:** Type-safe string manipulation
+          ```typescript
+          type EventName<T> = T extends string ? `on${Capitalize<T>}` : never
+          ```
+        - **Recursive Types:** Model recursive data structures
+          ```typescript
+          type JSONValue = string | number | boolean | null | JSONObject | JSONArray
+          type JSONObject = { [key: string]: JSONValue }
+          type JSONArray = JSONValue[]
+          ```
+        - **Branded Types:** Create nominal types for primitives
+          ```typescript
+          type UserId = string & { __brand: 'UserId' }
+          type Email = string & { __brand: 'Email' }
+          ```
+        - **Function Overloading:** Define multiple function signatures
+          ```typescript
+          function parse(value: string): object
+          function parse(value: number): string
+          function parse(value: string | number): object | string
+          ```
+        - **Generic Constraints:** Limit generic type parameters
+          ```typescript
+          type KeysOfType<T, U> = { [K in keyof T]: T[K] extends U ? K : never }[keyof T]
+          ```
+        - **Distributive Conditional Types:** Apply conditions over unions
+          ```typescript
+          type ToArray<T> = T extends any ? T[] : never
+          ```
+      </advanced_type_patterns>
+
+      <utility_type_patterns>
+        - **Built-in Utilities:** Master TypeScript's utility types
+          - `Partial<T>`: Make all properties optional
+          - `Required<T>`: Make all properties required
+          - `Readonly<T>`: Make all properties readonly
+          - `Pick<T, K>`: Select subset of properties
+          - `Omit<T, K>`: Exclude properties
+          - `Exclude<T, U>`: Exclude types from union
+          - `Extract<T, U>`: Extract types from union
+          - `NonNullable<T>`: Remove null and undefined
+          - `Parameters<T>`: Extract function parameters
+          - `ReturnType<T>`: Extract function return type
+          - `ConstructorParameters<T>`: Extract constructor parameters
+          - `InstanceType<T>`: Extract instance type
+          - `Awaited<T>`: Extract Promise resolution type
+        - **Custom Utility Types:** Build domain-specific utilities
+          ```typescript
+          type DeepPartial<T> = T extends object ? { [P in keyof T]?: DeepPartial<T[P]> } : T
+          type DeepReadonly<T> = T extends object ? { readonly [P in keyof T]: DeepReadonly<T[P]> } : T
+          ```
+      </utility_type_patterns>
+
+      <generic_type_patterns>
+        - **Generic Functions:** Type parameters for reusable functions
+          ```typescript
+          function identity<T>(value: T): T { return value }
+          function map<T, U>(array: T[], fn: (item: T) => U): U[] { return array.map(fn) }
+          ```
+        - **Generic Interfaces:** Parameterized interfaces
+          ```typescript
+          interface Container<T> {
+            value: T
+            map<U>(fn: (value: T) => U): Container<U>
+          }
+          ```
+        - **Generic Classes:** Type-safe class definitions
+          ```typescript
+          class Box<T> {
+            constructor(private value: T) {}
+            getValue(): T { return this.value }
+          }
+          ```
+        - **Generic Constraints:** Limit type parameters
+          ```typescript
+          function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+            return obj[key]
+          }
+          ```
+        - **Default Generic Types:** Provide fallback types
+          ```typescript
+          interface State<T = unknown> { data: T }
+          ```
+        - **Contextual Inference:** Let TypeScript infer generics
+          ```typescript
+          const numbers = [1, 2, 3].map(n => n * 2) // T inferred as number
+          ```
+      </generic_type_patterns>
+
+      <type_guards_and_narrowing>
+        - **Type Predicates:** Custom type guards
+          ```typescript
+          function isString(value: unknown): value is string {
+            return typeof value === 'string'
+          }
+          ```
+        - **In Operator:** Narrow by property existence
+          ```typescript
+          if ('name' in obj) { /* obj has name property */ }
+          ```
+        - **Instanceof:** Narrow by constructor
+          ```typescript
+          if (error instanceof TypeError) { /* error is TypeError */ }
+          ```
+        - **Discriminated Unions:** Use literal types for narrowing
+          ```typescript
+          type Result<T> = { success: true; data: T } | { success: false; error: Error }
+          ```
+        - **Control Flow Analysis:** TypeScript narrows in branches
+          ```typescript
+          if (value !== null) { /* value is non-null here */ }
+          ```
+        - **Assertion Functions:** Assert and narrow types
+          ```typescript
+          function assert(condition: any, msg?: string): asserts condition {
+            if (!condition) throw new Error(msg)
+          }
+          ```
+      </type_guards_and_narrowing>
+
+      <declaration_files>
+        - **Module Declarations:** Declare types for modules
+          ```typescript
+          declare module 'lodash' {
+            export function debounce<T extends (...args: any[]) => any>(
+              func: T, wait: number
+            ): T
+          }
+          ```
+        - **Global Declarations:** Extend global scope
+          ```typescript
+          declare global {
+            interface Window { myApp: MyAppInterface }
+          }
+          ```
+        - **Namespace Declarations:** Group related types
+          ```typescript
+          declare namespace API {
+            interface User { id: string; name: string }
+            interface Post { id: string; content: string }
+          }
+          ```
+        - **Triple-Slash Directives:** Reference other declarations
+          ```typescript
+          /// <reference types="node" />
+          /// <reference path="./types.d.ts" />
+          ```
+        - **Ambient Declarations:** Declare existing variables
+          ```typescript
+          declare const VERSION: string
+          declare function analytics(event: string): void
+          ```
+        - **Module Augmentation:** Extend existing modules
+          ```typescript
+          declare module 'express' {
+            interface Request { user?: User }
+          }
+          ```
+      </declaration_files>
+
+      <type_manipulation>
+        - **Keyof Operator:** Get union of object keys
+          ```typescript
+          type Keys = keyof { a: 1, b: 2 } // 'a' | 'b'
+          ```
+        - **Typeof Operator:** Extract type from value
+          ```typescript
+          const config = { api: 'url' }
+          type Config = typeof config
+          ```
+        - **Indexed Access:** Access nested types
+          ```typescript
+          type ApiResponse = { data: { users: User[] } }
+          type Users = ApiResponse['data']['users']
+          ```
+        - **Conditional Types:** Type-level if statements
+          ```typescript
+          type IsString<T> = T extends string ? true : false
+          ```
+        - **Infer Keyword:** Extract types in conditionals
+          ```typescript
+          type ElementType<T> = T extends (infer E)[] ? E : T
+          ```
+        - **Satisfies Operator:** Validate without widening
+          ```typescript
+          const config = { port: 3000 } satisfies { port: number }
+          ```
+      </type_manipulation>
+
+      <function_types>
+        - **Function Type Expressions:** Type function signatures
+          ```typescript
+          type Predicate<T> = (value: T) => boolean
+          type Mapper<T, U> = (value: T) => U
+          ```
+        - **Call Signatures:** Object with callable signature
+          ```typescript
+          type Logger = {
+            (message: string): void
+            level: 'debug' | 'info' | 'error'
+          }
+          ```
+        - **Construct Signatures:** Newable types
+          ```typescript
+          type Constructor<T> = new (...args: any[]) => T
+          ```
+        - **Method Signatures:** Type object methods
+          ```typescript
+          interface Calculator {
+            add(a: number, b: number): number
+            subtract(a: number, b: number): number
+          }
+          ```
+        - **Optional Parameters:** Use `?` for optional params
+          ```typescript
+          function greet(name: string, title?: string): string
+          ```
+        - **Rest Parameters:** Type spread parameters
+          ```typescript
+          function sum(...numbers: number[]): number
+          ```
+        - **This Types:** Type `this` context
+          ```typescript
+          interface Element {
+            addEventListener(this: Element, event: string): void
+          }
+          ```
+      </function_types>
+
+      <best_practices>
+        - **Prefer Unknown:** Use `unknown` instead of `any` for type safety
+        - **Avoid Type Assertions:** Let TypeScript infer or use type guards
+        - **Use Discriminated Unions:** Model state machines and variants
+        - **Leverage Type Inference:** Don't over-annotate obvious types
+        - **Const Assertions:** Use `as const` for literal types
+        - **Strict Functions:** Enable strict function types
+        - **No Implicit Any:** Never allow implicit any types
+        - **Exhaustive Checks:** Use never for complete switch cases
+        - **Nominal Types:** Brand primitive types for domain modeling
+        - **Avoid Enums:** Prefer const objects with `as const`
+        - **Type-Only Imports:** Use `import type` for types
+        - **Consistent Naming:** PascalCase for types, camelCase for values
+        - **Document Complex Types:** Add JSDoc for complex generics
+        - **Test Types:** Use `@ts-expect-error` for type testing
+        - **Avoid Namespace:** Use ES modules instead of namespaces
+      </best_practices>
+
+      <common_patterns>
+        - **Result Type:** Model success and failure
+          ```typescript
+          type Result<T, E = Error> =
+            | { ok: true; value: T }
+            | { ok: false; error: E }
+          ```
+        - **Maybe Type:** Handle optional values
+          ```typescript
+          type Maybe<T> = T | null | undefined
+          ```
+        - **AsyncData Type:** Model loading states
+          ```typescript
+          type AsyncData<T> =
+            | { status: 'idle' }
+            | { status: 'loading' }
+            | { status: 'success'; data: T }
+            | { status: 'error'; error: Error }
+          ```
+        - **DeepPartial:** Recursive partial type
+          ```typescript
+          type DeepPartial<T> = T extends object
+            ? { [P in keyof T]?: DeepPartial<T[P]> }
+            : T
+          ```
+        - **Prettify:** Flatten intersection types
+          ```typescript
+          type Prettify<T> = { [K in keyof T]: T[K] } & {}
+          ```
+      </common_patterns>
+    </high-priority>
+
+  </typescript-rules>
+</instructions>

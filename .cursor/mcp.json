@@ -1,0 +1,78 @@
+{
+  "mcpServers": {
+    "RepoPrompt": {
+      "args": [],
+      "command": "${HOME}/RepoPrompt/repoprompt_cli"
+    },
+    "analogical-reasoning": {
+      "args": [
+        "-y",
+        "@waldzellai/analogical-reasoning"
+      ],
+      "command": "npx"
+    },
+    "collaborative-reasoning": {
+      "args": [
+        "-y",
+        "@waldzellai/collaborative-reasoning"
+      ],
+      "command": "npx"
+    },
+    "context7": {
+      "args": [
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "command": "npx"
+    },
+    "decision-framework": {
+      "args": [
+        "-y",
+        "@waldzellai/decision-framework"
+      ],
+      "command": "npx"
+    },
+    "memory": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
+      "command": "npx"
+    },
+    "metacognitive-monitoring": {
+      "args": [
+        "-y",
+        "@waldzellai/metacognitive-monitoring"
+      ],
+      "command": "npx"
+    },
+    "perplexity-ask": {
+      "args": [
+        "-y",
+        "server-perplexity-ask"
+      ],
+      "command": "npx"
+    },
+    "scientific-method": {
+      "args": [
+        "-y",
+        "@waldzellai/scientific-method"
+      ],
+      "command": "npx"
+    },
+    "sequential-thinking": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "command": "npx"
+    },
+    "structured-argumentation": {
+      "args": [
+        "-y",
+        "@waldzellai/structured-argumentation"
+      ],
+      "command": "npx"
+    }
+  }
+}

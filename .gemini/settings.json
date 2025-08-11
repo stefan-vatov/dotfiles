@@ -1,0 +1,70 @@
+{
+  "mcpServers": {
+    "RepoPrompt": {
+      "args": [],
+      "command": "${HOME}/RepoPrompt/repoprompt_cli"
+    },
+    "analogical-reasoning": {
+      "args": [
+        "@waldzellai/analogical-reasoning"
+      ],
+      "command": "bunx"
+    },
+    "collaborative-reasoning": {
+      "args": [
+        "@waldzellai/collaborative-reasoning"
+      ],
+      "command": "bunx"
+    },
+    "context7": {
+      "args": [
+        "@upstash/context7-mcp"
+      ],
+      "command": "bunx"
+    },
+    "decision-framework": {
+      "args": [
+        "@waldzellai/decision-framework"
+      ],
+      "command": "bunx"
+    },
+    "memory": {
+      "args": [
+        "@modelcontextprotocol/server-memory"
+      ],
+      "command": "bunx"
+    },
+    "metacognitive-monitoring": {
+      "args": [
+        "@waldzellai/metacognitive-monitoring"
+      ],
+      "command": "bunx"
+    },
+    "perplexity-ask": {
+      "args": [
+        "server-perplexity-ask"
+      ],
+      "command": "bunx"
+    },
+    "scientific-method": {
+      "args": [
+        "@waldzellai/scientific-method"
+      ],
+      "command": "bunx"
+    },
+    "sequential-thinking": {
+      "args": [
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "command": "bunx"
+    },
+    "structured-argumentation": {
+      "args": [
+        "@waldzellai/structured-argumentation"
+      ],
+      "command": "bunx"
+    }
+  },
+  "selectedAuthType": "gemini-api-key",
+  "theme": "Dracula"
+}

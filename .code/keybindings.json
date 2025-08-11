@@ -2,5 +2,9 @@
   {
     "command": "workbench.action.addComment",
     "key": "ctrl+cmd+c"
+  },
+  {
+    "command": "composerMode.agent",
+    "key": "cmd+i"
   }
 ]

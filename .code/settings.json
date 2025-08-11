@@ -1,12 +1,9 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
   "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[nginx]": {
     "editor.defaultFormatter": "teclado.vscode-nginx-format"
@@ -14,8 +11,27 @@
   "[python]": {
     "editor.formatOnType": true
   },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": false
+  },
+  "cSpell.customDictionaries": {
+    "custom-dictionary-user": {
+      "addWords": true,
+      "name": "custom-dictionary-user",
+      "path": "~/.cspell/custom-dictionary-user.txt",
+      "scope": "user"
+    }
   },
   "cSpell.ignoreWords": [
     "personalisation"
@@ -41,20 +57,47 @@
     "rizz",
     "sitename",
     "sitenames",
+    "tailwindcss",
+    "deepseek",
+    "headlessui",
+    "heroicons",
+    "loglevel",
+    "mysession",
+    "scminput",
     "tailwindcss"
   ],
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "continue.telemetryEnabled": false,
   "debug.allowBreakpointsEverywhere": true,
+  "deno.enable": true,
   "editor.accessibilitySupport": "off",
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorSurroundingLines": 15,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "Input Code Mono",
   "editor.fontSize": 13,
+  "editor.formatOnSave": true,
   "editor.inlineSuggest.enabled": true,
   "editor.tabSize": 2,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.patterns": {
+    "*.db": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.s3db": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.ts": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "Cargo.toml": "Cargo.lock",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "tsconfig.json": "tsconfig.*.json"
+  },
+  "files.autoGuessEncoding": true,
   "github.copilot.editor.enableAutoCompletions": true,
   "github.copilot.enable": {
     "*": false,
@@ -87,8 +130,9 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
+  "traycer.enableAutoAnalysis": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Obsidian Dark Theme (Rust syntax optimized)",
+  "workbench.colorTheme": "Flexoki Dark",
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none"
 }
