@@ -1,9 +1,15 @@
 #!/usr/bin/env -S deno run --allow-read --allow-write=./logs --allow-env
 
+// Toggle logging to files - set to false to disable file logging
+const ENABLE_LOGGING = false;
+
 import { readAll } from "https://deno.land/std@0.224.0/io/read_all.ts";
 import { ensureDir } from "https://deno.land/std@0.224.0/fs/ensure_dir.ts";
 import type { ToolInput } from "./pre_tool_use/types.ts";
-import { isDangerousRmCommand, isIndirectRm } from "./pre_tool_use/detectors/rm-command.ts";
+import {
+  isDangerousRmCommand,
+  isIndirectRm,
+} from "./pre_tool_use/detectors/rm-command.ts";
 import { isFileDeletionAttempt } from "./pre_tool_use/detectors/file-deletion.ts";
 import { isEnvFileAccess } from "./pre_tool_use/detectors/env-file.ts";
 import { isDangerousSystemOperation } from "./pre_tool_use/detectors/system-operations.ts";
@@ -20,28 +26,32 @@ async function logBlockedOperation(
   reason: string,
   errorMessage: string,
 ) {
-  try {
-    const logDir = "./logs";
-    await ensureDir(logDir);
-    const logPath = `${logDir}/pre_tool_use_blocked.json`;
-
-    let blockedData: any[] = [];
+  if (ENABLE_LOGGING) {
     try {
-      const existingData = await Deno.readTextFile(logPath);
-      blockedData = JSON.parse(existingData);
+      const logDir = "./logs";
+      await ensureDir(logDir);
+      const logPath = `${logDir}/pre_tool_use_blocked.json`;
+
+      let blockedData: Array<
+        ToolInput & { timestamp: string; reason: string }
+      > = [];
+      try {
+        const existingData = await Deno.readTextFile(logPath);
+        blockedData = JSON.parse(existingData);
+      } catch {
+        blockedData = [];
+      }
+
+      blockedData.push({
+        ...inputData,
+        timestamp: new Date().toISOString(),
+        reason,
+      });
+
+      await Deno.writeTextFile(logPath, JSON.stringify(blockedData, null, 2));
     } catch {
-      blockedData = [];
+      // Ignore logging errors
     }
-
-    blockedData.push({
-      ...inputData,
-      timestamp: new Date().toISOString(),
-      reason,
-    });
-
-    await Deno.writeTextFile(logPath, JSON.stringify(blockedData, null, 2));
-  } catch {
-    // Ignore logging errors
   }
 
   console.error(errorMessage);
@@ -164,41 +174,46 @@ async function main() {
 
     // If we get here, the operation is allowed
     // Log the allowed operation
-    const logDir = "./logs";
-    await ensureDir(logDir);
-    const logPath = `${logDir}/pre_tool_use.json`;
+    if (ENABLE_LOGGING) {
+      const logDir = "./logs";
+      await ensureDir(logDir);
+      const logPath = `${logDir}/pre_tool_use.json`;
 
-    let logData: ToolInput[] = [];
-    try {
-      const existingData = await Deno.readTextFile(logPath);
-      logData = JSON.parse(existingData);
-    } catch {
-      logData = [];
+      let logData: Array<ToolInput & { timestamp: string; blocked: boolean }> =
+        [];
+      try {
+        const existingData = await Deno.readTextFile(logPath);
+        logData = JSON.parse(existingData);
+      } catch {
+        logData = [];
+      }
+
+      const logEntry = {
+        ...inputData,
+        timestamp: new Date().toISOString(),
+        blocked: false,
+      };
+      logData.push(logEntry);
+
+      await Deno.writeTextFile(logPath, JSON.stringify(logData, null, 2));
     }
-
-    const logEntry = {
-      ...inputData,
-      timestamp: new Date().toISOString(),
-      blocked: false,
-    };
-    logData.push(logEntry);
-
-    await Deno.writeTextFile(logPath, JSON.stringify(logData, null, 2));
 
     Deno.exit(0);
   } catch (error) {
     // Log errors
-    try {
-      const logDir = "./logs";
-      await ensureDir(logDir);
-      const errorLogPath = `${logDir}/pre_tool_use_errors.log`;
-      await Deno.writeTextFile(
-        errorLogPath,
-        `${new Date().toISOString()}: ${error}\n`,
-        { append: true }
-      );
-    } catch {
-      // If we can't even log the error, just exit
+    if (ENABLE_LOGGING) {
+      try {
+        const logDir = "./logs";
+        await ensureDir(logDir);
+        const errorLogPath = `${logDir}/pre_tool_use_errors.log`;
+        await Deno.writeTextFile(
+          errorLogPath,
+          `${new Date().toISOString()}: ${error}\n`,
+          { append: true },
+        );
+      } catch {
+        // If we can't even log the error, just exit
+      }
     }
     Deno.exit(0);
   }

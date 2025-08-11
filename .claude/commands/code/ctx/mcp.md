@@ -110,6 +110,10 @@
         14. **Use analogical-reasoning** to explain or understand complex patterns
         15. **Employ metacognitive-monitoring** for critical code where reasoning quality matters
 
+        <ulta-priority>
+          Use graphiti-memory as your external memory. Track facts.
+        </ulta-priority>
+
         Remember: These servers work best when you explicitly invoke their capabilities and clearly state what type of reasoning or assistance you need.
     </high-priority>
 

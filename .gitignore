@@ -31,3 +31,6 @@ fish/fish_history
 **/*.local.*
 .logs
 logs
+
+
+.plan

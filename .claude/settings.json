@@ -1,4 +1,7 @@
 {
+  "env": {
+    "ANTHROPIC_CUSTOM_HEADERS": "anthropic-beta: interleaved-thinking-2025-05-14"
+  },
   "hooks": {
     "Notification": [
       {
@@ -40,5 +43,6 @@
         "hooks": []
       }
     ]
-  }
+  },
+  "model": "sonnet"
 }

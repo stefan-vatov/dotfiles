@@ -90,9 +90,9 @@
   },
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 13,
-  "traycer.enableAutoAnalysis": true,
+  "traycer.enableAutoAnalysis": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Draco-dark",
+  "workbench.colorTheme": "Flexoki Dark",
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "none"
 }

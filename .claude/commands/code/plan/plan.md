@@ -90,7 +90,7 @@
   <examples>
     ```bash
     # Basic usage with PRD file
-    /code:plan:gen-plan "docs/mobile-app-requirements.md"
+    /code:plan:gen-plan "docs/mobile-app-Requirements.json"
 
     # Custom output directory (within .plan/)
     /code:plan:gen-plan -o ".plan/projects" "requirements/web-platform-prd.md"
@@ -109,5 +109,6 @@
     /code:plan:gen-plan "nonexistent.md"               # Error: File not found
     /code:plan:gen-plan -p "invalid-phase" "doc.md"    # Error: Invalid phase name
     ```
+
   </examples>
 </instructions>

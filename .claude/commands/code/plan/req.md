@@ -40,7 +40,7 @@
     - Maintain glossary in .claude/glossary.md (create if absent, update terms).
     - Ensure each requirement links to unique ID for traceability matrix fields
       (need_id, test_case_ref, design_link).
-    - Produce a **JSON PRD** file in `.plan/01_requirements/NN_<slug>.json`,
+    - Produce a **JSON PRD** file in `.plan/NN_<feature>/01_Requirements.json`,
       where NN is next available ascending number with zero-pad (01, 02…).
     - Return concise summary of actions to stdout.
     - When asking clarifying questions ask them in sequence one at a time, waiting for the user's input then proceed to the next one.

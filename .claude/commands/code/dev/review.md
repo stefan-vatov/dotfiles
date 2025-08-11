@@ -101,6 +101,7 @@
        - Display report to console
        - Show completion message with saved location
     </save_output>
+
   </execution>
 
   <!-- ---------- 4. VALIDATION CHECKLIST ---------- -->
@@ -123,7 +124,7 @@
   <examples>
     ```bash
     # Review with requirements in default location mentioned in args
-    /code:review "Check implementation against requirements in docs/requirements.md"
+    /code:review "Check implementation against requirements in docs/Requirements.json"
 
     # Review with explicit requirements file
     /code:review --requirements=./project-requirements.txt
@@ -134,6 +135,7 @@
     # Minimal invocation (will prompt for requirements location)
     /code:review "Review my changes"
     ```
+
   </examples>
 
   <!-- ---------- 6. SUB-AGENTS ---------- -->
@@ -197,6 +199,7 @@
         - Code organization
       </review-points>
     </agent>
+
   </sub-agents>
 
   <!-- ---------- 7. ERROR HANDLING ---------- -->
@@ -229,6 +232,7 @@
       - Prompt: "Please provide requirements location:"
       - Allow interactive input or abort
     </no-requirements>
+
   </error-handling>
 
   <!-- ---------- 8. OUTPUT FORMAT ---------- -->
@@ -277,5 +281,6 @@
       [code snippet - max 5 lines]
       ```
     </snippet-format>
+
   </output-format>
 </instructions>
