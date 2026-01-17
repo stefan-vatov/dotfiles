@@ -23,8 +23,26 @@ CURSOR_SETTINGS_FILE="mcp.json"
 
 safe_remove "$CURSOR_TARGET_DIR/$CURSOR_SETTINGS_FILE"
 
+# ---------------------------------- GEMINI ---------------------------------- #
+
 log_section "GEMINI"
 GEMINI_TARGET_DIR="$HOME/.gemini"
 GEMINI_SETTINGS_FILE="settings.json"
 
 safe_remove "$GEMINI_TARGET_DIR/$GEMINI_SETTINGS_FILE"
+
+# ---------------------------------- GHOSTTY ---------------------------------- #
+
+log_section "GHOSTTY"
+GHOSTTY_TARGET_DIR="$HOME/.config"
+GHOSTTY_SETTINGS_FILE="ghostty"
+
+safe_remove "$GHOSTTY_TARGET_DIR/$GHOSTTY_SETTINGS_FILE"
+
+# ---------------------------------- HELIX ---------------------------------- #
+
+log_section "HELIX"
+HELIX_TARGET_DIR="$HOME/.config"
+HELIX_SETTINGS_FILE="helix"
+
+safe_remove "$HELIX_TARGET_DIR/$HELIX_SETTINGS_FILE"

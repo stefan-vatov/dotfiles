@@ -32,6 +32,8 @@ safe_mkdir "$CURSOR_TARGET_DIR"
 safe_remove "$CURSOR_TARGET_DIR/$CURSOR_SETTINGS_FILE"
 safe_link "$(pwd)/$CURSOR_DOTFILES_DIR/$CURSOR_SETTINGS_FILE" "$CURSOR_TARGET_DIR/$CURSOR_SETTINGS_FILE"
 
+# ---------------------------------- GEMINI ---------------------------------- #
+
 log_section "GEMINI"
 GEMINI_DOTFILES_DIR=".gemini"
 GEMINI_TARGET_DIR="$HOME/.gemini"
@@ -40,3 +42,32 @@ GEMINI_SETTINGS_FILE="settings.json"
 safe_mkdir "$GEMINI_TARGET_DIR"
 safe_remove "$GEMINI_TARGET_DIR/$GEMINI_SETTINGS_FILE"
 safe_link "$(pwd)/$GEMINI_DOTFILES_DIR/$GEMINI_SETTINGS_FILE" "$GEMINI_TARGET_DIR/$GEMINI_SETTINGS_FILE"
+
+# ---------------------------------- CONFIG ---------------------------------- #
+
+log_section "CONFIG"
+CONFIG_DOTFILES_DIR=".config"
+CONFIG_TARGET_DIR="$HOME/.config"
+
+safe_mkdir "$CONFIG_TARGET_DIR"
+
+# ---------------------------------- GHOSTTY ---------------------------------- #
+
+log_section "GHOSTTY"
+GHOSTTY_DOTFILES_DIR=".config"
+GHOSTTY_TARGET_DIR="$HOME/.config"
+GHOSTTY_SETTINGS_FILE="ghostty"
+
+safe_remove "$GHOSTTY_TARGET_DIR/$GHOSTTY_SETTINGS_FILE"
+safe_link "$(pwd)/$GHOSTTY_DOTFILES_DIR/$GHOSTTY_SETTINGS_FILE" "$GHOSTTY_TARGET_DIR/$GHOSTTY_SETTINGS_FILE"
+
+
+# ---------------------------------- HELIX ---------------------------------- #
+
+log_section "HELIX"
+HELIX_DOTFILES_DIR=".config"
+HELIX_TARGET_DIR="$HOME/.config"
+HELIX_SETTINGS_FILE="helix"
+
+safe_remove "$HELIX_TARGET_DIR/$HELIX_SETTINGS_FILE"
+safe_link "$(pwd)/$HELIX_DOTFILES_DIR/$HELIX_SETTINGS_FILE" "$HELIX_TARGET_DIR/$HELIX_SETTINGS_FILE"
