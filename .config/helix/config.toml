@@ -1,1 +1,4 @@
 theme = "flexoki-dark"
+
+[editor.soft-wrap]
+enable = true

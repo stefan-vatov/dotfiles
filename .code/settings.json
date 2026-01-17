@@ -106,6 +106,7 @@
     "scminput": false,
     "yaml": true
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
   "githubPullRequests.pushBranch": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "redhat.telemetry.enabled": false,

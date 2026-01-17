@@ -34,9 +34,6 @@ export PATH="$PATH:$HOME/.local/bin"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-# Added by Windsurf
-export PATH="$HOME/.codeium/windsurf/bin:$PATH"
-alias claude="$HOME/.claude/local/claude"
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
@@ -127,5 +124,7 @@ function emacs {
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init zsh)"
 eval "$(ssh-agent -s)"
+
+ssh-add --apple-use-keychain ~/.ssh/id_rsa
 
 eval "$(starship init zsh)"

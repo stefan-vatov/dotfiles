@@ -1,3 +1,6 @@
+# Only run in Bash; if not Bash, do nothing.
+[ -n "$BASH_VERSION" ] || return
+
 [ -f ~/.ssh/id_rsa ] && ssh-add ~/.ssh/id_rsa
 
 # PATH
@@ -19,13 +22,24 @@ export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:~/.bin"
 
-if [ -d "${HOME}/.asdf" ]
-then
-  . $HOME/.asdf/asdf.sh
 
-  # asdf completions
-  . $HOME/.asdf/completions/asdf.bash
+# ----------------------------------- ASDF ----------------------------------- #
+
+if [ -f "$HOME/.asdf/asdf.sh" ]; then
+  . "$HOME/.asdf/asdf.sh"
+elif command -v brew >/dev/null 2>&1 && [ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]; then
+  . "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
+
+if [ -n "$BASH_VERSION" ]; then
+  if [ -f "$HOME/.asdf/completions/asdf.bash" ]; then
+    . "$HOME/.asdf/completions/asdf.bash"
+  elif command -v brew >/dev/null 2>&1 && [ -f "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash" ]; then
+    . "$(brew --prefix asdf)/etc/bash_completion.d/asdf.bash"
+  fi
+fi
+
+# ---------------------------------------------------------------------------- #
 
 export NVM_DIR="$HOME/.nvm"
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -t __init_nvm)" = function ]; then

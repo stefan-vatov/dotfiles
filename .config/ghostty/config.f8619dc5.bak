@@ -32,4 +32,3 @@ unfocused-split-opacity = 1.0
 confirm-close-surface = false
 clipboard-paste-protection = false
 shell-integration-features = no-cursor
-keybind = shift+enter=text:\x1b\r
