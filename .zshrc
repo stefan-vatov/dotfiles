@@ -100,10 +100,8 @@ export PATH="/Users/angeal/Library/Python/3.7/bin:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
-TERM="xterm"
-export TERM
-
-
+export COLORTERM=truecolor
+export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
