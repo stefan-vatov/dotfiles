@@ -104,6 +104,9 @@ TERM="xterm"
 export TERM
 
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 function emacs {
     if [[ $# -eq 0 ]]; then
         /usr/local/bin/emacs # "emacs" is function, will cause recursion
